@@ -1,10 +1,11 @@
 // USER VARIABLES SECTION
 
-$accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
-$textcolor: #333 // Text Color
-$lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
+$accent: #E6E6E6 // Accent Color
+$fontsize: 18px // Body Font Size
+$textcolor: #000 // Text Color
+$bg-color: #F7F7F7 // Background Color
+$lineheight: 1.01 // Document Line Height
+$userfont: RoadRadio-LS, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
@@ -27,10 +28,8 @@ $gutter: $grid-gutter-width
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('RoadRadio-LS', normal, 400, '../fonts/RoadRadio.woff2')
+@include font('RoadRadio-LS', normal, 700, '../fonts/RoadRadio-Bold.woff2')
 
 // GENERAL CSS SETTINGS
 
@@ -39,7 +38,7 @@ $gutter: $grid-gutter-width
 
 ::selection
 	background-color: $accent
-	color: #fff
+	color: #000
 
 input, textarea
 	outline: none
@@ -51,8 +50,37 @@ input, textarea
 body
 	font-family: $userfont
 	font-size: $fontsize
+	font-weight: 400
 	line-height: $lineheight
 	color: $textcolor
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
+	height: 100%
+
+.container
+	max-width: 1450px
+	margin: 0 auto
+	padding: 0 15px
+	width: 100%
+
+.wrapper
+	position: relative 
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.page
+	flex: 1 1 100%	
+
+a 
+	display: block
+	color: inherit
+	text-decoration: none
+	text-transform: uppercase
+	white-space: nowrap
+	@media(any-hover: hover) 
+		color: $textcolor
+
+figure
+	margin: 0		

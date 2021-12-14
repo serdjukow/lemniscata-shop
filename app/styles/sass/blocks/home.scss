@@ -1,0 +1,213 @@
+.header {
+	padding: 50px 0 30px 0;
+
+	// .header__logo
+
+	&__logo {
+		margin: 0 auto 45px auto;
+	}
+
+	// .header__cart
+
+	&__cart {
+	}
+
+	&__row-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.logo {
+	display: block;
+	max-width: 400px;
+	text-align: center;
+	user-select: none;
+	cursor: pointer;
+
+	// .logo__img-container
+
+	&__img-container {
+		margin: 0 0 8px;
+		img {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+
+	span {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $textcolor;
+	}
+}
+
+.header {
+	// .header__navigation
+
+	&__navigation {
+	}
+}
+
+.menu-menu-container {
+}
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	margin-bottom: -10px;
+}
+.menu-item {
+	list-style: none;
+	border-radius: 13px;
+	padding: 3px 8px 4px 8px;
+	transition: background-color 0.2s ease-in;
+	margin-bottom: 10px;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $accent;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-right: 20px;
+	}
+	a {
+		text-transform: uppercase;
+		white-space: nowrap;
+		@media (any-hover: hover) {
+			color: $textcolor;
+		}
+	}
+}
+.current-menu-item {
+	border-radius: 13px;
+	background-color: $accent;
+	&:hover {
+		background-color: darken($color: $accent, $amount: 10%);
+	}
+}
+
+.cart {
+	align-self: flex-start;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 2px 4px 3px 8px;
+
+	// .cart__img-container
+
+	&__img-container {
+		width: 29px;
+		height: 29px;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+	}
+
+	&.active {
+		&::before {
+			content: "";
+			background-color: #ff5e5e;
+		}
+	}
+}
+
+.page {
+	display: flex;
+
+	&__row {
+		background-color: $accent;
+	}
+}
+
+.footer {
+	padding: 45px 0 60px;
+
+	// .footer__row
+
+	&__row {
+	}
+
+	// .footer__audio
+
+	&__audio {
+	}
+}
+
+.audio {
+	display: flex;
+	align-items: center;
+
+	// .audio__img-container
+
+	&__img-container {
+		position: relative;
+		width: 27px;
+		height: 27px;
+		margin-right: 25px;
+		background-color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in;
+
+		&::before {
+			position: absolute;
+			top: -8px;
+			right: -8px;
+			display: block;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: lighten($color: #000000, $amount: 10%);
+			}
+		}
+
+		&.play {
+			&::before {
+				content: "";
+				background-color: #ff5e5e;
+			}
+		}
+
+		img {
+			display: block;
+			width: 7px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 2px;
+	}
+
+	&__time {
+		width: 0;
+		height: 3px;
+		background-color: #474747;
+	}
+
+	&__track {
+		width: 100%;
+		height: 3px;
+		background-color: $accent;
+	}
+}
