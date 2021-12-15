@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let time = document.querySelector(".audio__time");
 	const audioInfo = document.querySelector(".audio-info");
 	let audioPlay = setInterval;
-	const audioTitle = document.querySelector('.audio__title')
+	const audioTitle = document.querySelector(".audio__title");
 
 	audioButton.addEventListener("click", () =>
 		audioButton.classList.contains("play") ? soundPause() : soundPlay()
@@ -42,5 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		time.style.width = 0;
 	};
 
+	const text = document.getElementById("text");
 
+	animate(text);
+
+	function animate(element) {
+		let elementWidth = element.offsetWidth;
+		let parentWidth = element.parentElement.offsetWidth;
+		let flag = 0;
+
+		setInterval(() => {
+			element.style.marginLeft = --flag + "px";
+
+			if (elementWidth == -flag) {
+				flag = parentWidth;
+			}
+		}, 10);
+	}
 });

@@ -278,13 +278,14 @@ a:active {
 	white-space: nowrap;
 	overflow: hidden;
 }
+
 .audio-info.marquee {
 	.audio__title {
 		animation: marquee 10s linear infinite;
 	}
 }
 
-
+/*
 @keyframes marquee {
 	0% {
 		transform: translatX(0);
@@ -292,4 +293,16 @@ a:active {
 	100% {
 		transform: translateX(-100%);
 	}
+}
+*/
+
+#marquee {
+	width: 100%;
+	overflow: hidden;
+}
+
+.text {
+	white-space: nowrap;
+	clear: both;
+	float: left;
 }
